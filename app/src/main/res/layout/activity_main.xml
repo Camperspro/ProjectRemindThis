@@ -2,17 +2,154 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appsettings"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="435dp"
+        android:layout_height="359dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/closest1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Tnotif" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/Hnotif"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        app:backgroundTint="#FFEB3B"
+        app:layout_constraintBottom_toTopOf="@+id/calendarView"
+        app:layout_constraintStart_toEndOf="@+id/Tnotif"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/stat_notify_error" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="16dp"
+        android:text="Reminders"
+        app:backgroundTint="#FF0000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="16dp"
+        android:text="Lists"
+        app:backgroundTint="#56B2FB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/groups" />
+
+    <Button
+        android:id="@+id/groups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="16dp"
+        android:text="Groups"
+        app:backgroundTint="#0FD501"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButton2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_myplaces" />
+
+    <TextView
+        android:id="@+id/Tnotif"
+        android:layout_width="323dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:background="#ECECEC"
+        android:text="No notifications."
+        app:layout_constraintEnd_toStartOf="@+id/Hnotif"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/closest1"
+        android:layout_width="278dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="24dp"
+        android:background="#E6E6E6"
+        android:text="There are no events."
+        app:layout_constraintBottom_toTopOf="@+id/closest2"
+        app:layout_constraintEnd_toStartOf="@+id/closest1Date" />
+
+    <EditText
+        android:id="@+id/closest1Date"
+        android:layout_width="122dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView"
+        tools:layout_editor_absoluteX="283dp" />
+
+    <TextView
+        android:id="@+id/closest2"
+        android:layout_width="278dp"
+        android:layout_height="42dp"
+        android:background="#E6E6E6"
+        android:text="There are no events."
+        app:layout_constraintEnd_toStartOf="@+id/closest2Date"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <EditText
+        android:id="@+id/closest2Date"
+        android:layout_width="122dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="283dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <EditText
+        android:id="@+id/closest3Date"
+        android:layout_width="122dp"
+        android:layout_height="43dp"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="283dp"
+        tools:layout_editor_absoluteY="594dp" />
+
+    <TextView
+        android:id="@+id/closest3"
+        android:layout_width="278dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="25dp"
+        android:background="#E6E6E6"
+        android:text="There are no events."
+        app:layout_constraintEnd_toStartOf="@+id/closest3Date"
+        app:layout_constraintTop_toBottomOf="@+id/closest2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
